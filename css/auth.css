@@ -19,7 +19,7 @@ body {
   width: 400px;
   border-radius: 10px;
   background-color: rgb(200, 242, 253);
-  height: 390px;
+  /* height: 390px; */
   left: 100px;
   position: absolute;
   box-shadow: 0 0 20px rgb(0, 156, 173);
@@ -72,4 +72,8 @@ p {
   font-size: 14px;
   border-top: 1px solid rgb(158, 152, 152);
   padding: 20px;
+}
+
+.hidden {
+  display: none;
 }
