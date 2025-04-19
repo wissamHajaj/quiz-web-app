@@ -8,27 +8,31 @@
   </head>
   <body>
     <div class="auth-container">
-      <div class="form-container">
+      <div id="register-container">
         <h2>Register</h2>
         <form action="">
           <input type="text" placeholder="Name" required />
           <input type="email" placeholder="Email" required />
           <input type="password" placeholder="password" required />
           <button type="submit" class="register-btn">Register</button>
-          <p>Already have an account? <a href="">Login</a></p>
+          <p>
+            Already have an account? <a href="" id="show-login-form">Login</a>
+          </p>
         </form>
       </div>
-      <!-- <div class="form-container">
+      <div class="hidden" id="login-container">
         <h2>Login</h2>
         <form action="">
           <input type="email" placeholder="Email" />
           <input type="password" placeholder="password" />
           <button type="submit" class="login-btn">Login</button>
-          <p>Do not have an accoun?t <a href="">Register</a></p>
+          <p>
+            Do not have an account?
+            <a href="" id="show-register-form">Register</a>
+          </p>
         </form>
-      </div> -->
+      </div>
     </div>
-
     <script src="js/auth.js"></script>
   </body>
 </html>
