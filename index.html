@@ -10,10 +10,28 @@
     <div class="auth-container">
       <div id="register-container">
         <h2>Register</h2>
-        <form action="">
-          <input type="text" placeholder="Name" required />
-          <input type="email" placeholder="Email" required />
-          <input type="password" placeholder="password" required />
+        <form action="" class="register-form">
+          <input
+            type="text"
+            placeholder="Name"
+            class="register-name"
+            autocomplete="username"
+            required
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            class="register-email"
+            autocomplete="email"
+            required
+          />
+          <input
+            type="password"
+            placeholder="password"
+            class="register-password"
+            autocomplete="new-password"
+            required
+          />
           <button type="submit" class="register-btn">Register</button>
           <p>
             Already have an account? <a href="" id="show-login-form">Login</a>
@@ -23,8 +41,20 @@
       <div class="hidden" id="login-container">
         <h2>Login</h2>
         <form action="">
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="password" />
+          <input
+            type="email"
+            placeholder="Email"
+            class="login-email"
+            autocomplete="email"
+            required
+          />
+          <input
+            type="password"
+            placeholder="password"
+            class="login-password"
+            autocomplete="current-password"
+            required
+          />
           <button type="submit" class="login-btn">Login</button>
           <p>
             Do not have an account?
