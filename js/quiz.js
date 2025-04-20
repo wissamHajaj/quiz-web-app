@@ -34,3 +34,58 @@ function addQuestionToUi(question, questionIndex) {
   questionContainer.classList.add("question-container");
   quizQuestionsContainer.appendChild(questionContainer);
 }
+
+const submitBtn = document.querySelector(".submit-btn");
+let answers = [];
+submitBtn.addEventListener("click", () => {
+  let allAnswers = true;
+  document
+    .querySelectorAll(".question-container")
+    .forEach((question, index) => {
+      const selectedOption = question.querySelector(
+        "input[type='radio']:checked"
+      );
+      if (selectedOption) {
+        answers.push({
+          selectedIndex: index,
+          selectedAnswer: selectedOption.value,
+        });
+      } else {
+        allAnswers = false;
+      }
+    });
+  if (!allAnswers) {
+    alert("Please answer all the question");
+    return;
+  }
+  let grade = 0;
+  const valueOfQuestion = 100 / answers.length;
+
+  questionsForQuiz.forEach((question, index) => {
+    if (answers[index]) {
+      const answer = answers[index].selectedAnswer;
+      if (answer === question.correctOption) {
+        grade += valueOfQuestion;
+      }
+    }
+  });
+
+  //   console.log(grade);
+  alert(`You got a grade:  ${grade} / 100`);
+  saveGradeToLocalStorage(grade);
+  grade = 0;
+  answers = [];
+});
+
+function saveGradeToLocalStorage(grade) {
+  const user = JSON.parse(localStorage.getItem("currentUser"));
+  const userId = user.id;
+  const usersGrades = JSON.parse(localStorage.getItem("usersGrade")) || [];
+
+  const userGrade = {
+    id: userId,
+    grade: grade,
+  };
+  usersGrades.push(userGrade);
+  localStorage.setItem("usersGrade", JSON.stringify(usersGrades));
+}
