@@ -97,3 +97,39 @@ button:hover {
   font-size: 35px;
 }
 
+.quizes-section {
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  gap: 30px;
+  background-color: #d8d8d8;
+}
+
+.quiz-card {
+  width: 250px;
+  /* padding: 20px; */
+  border-radius: 10px;
+  text-align: center;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: #d7d5d5;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgb(110, 223, 248);
+}
+
+.quiz-image {
+  object-fit: cover;
+  height: 220px;
+  width: 100%;
+}
+
+.quiz-title {
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.start-btn {
+  margin: 25px;
+}
