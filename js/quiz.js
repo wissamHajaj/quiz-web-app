@@ -82,10 +82,12 @@ function saveGradeToLocalStorage(grade) {
   const userId = user.id;
   const usersGrades = JSON.parse(localStorage.getItem("usersGrade")) || [];
 
-  const userGrade = {
-    id: userId,
-    grade: grade,
-  };
-  usersGrades.push(userGrade);
+
+  const userGrade = usersGrades.find((userGrade) => userGrade.id === userId);
+  if (userGrade) {
+    userGrade.grades.push({ quizId, grade });
+  } else {
+    usersGrades.push({ id: userId, grades: [{ quizId, grade }] });
+  }
   localStorage.setItem("usersGrade", JSON.stringify(usersGrades));
 }
