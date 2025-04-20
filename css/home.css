@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  display: flex;
+  width: 100%;
+  background-color: rgb(161, 236, 255);
+  padding: 5px 0;
+  overflow: auto;
+  position: fixed;
+  align-items: center;
+  z-index: 1;
+}
+
+.navbar img {
+  object-fit: contain;
+  height: 50px;
+}
+
+.nav-links {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.nav-links li {
+  margin: 0 10px;
+  padding: 8px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: rgb(60, 59, 59);
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+  color: #333;
+}
+
+.nav-links li:hover {
+  background-color: #57d3de;
+  border-radius: 5px;
+}
+
+button {
+  margin: 0 10px;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 15px;
+  background-color: #439fdc;
+}
+
+button:hover {
+  background-color: #1782c9;
+}
+
+.welcome-section {
+  height: 100vh;
+  background-position: center;
+  background-image: url("../assets/images/home-background-image.png");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.welcome-section h1 {
+  background-color: #439fdc;
+  border-radius: 10px;
+  margin-top: 150px;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+  font-size: 50px;
+  padding: 50px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: #e2e2e2;
+}
+
+.welcome-section p {
+  text-align: justify;
+  text-align: center;
+  width: 30%;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif, Courier, monospace;
+  color: #439fdc;
+  font-weight: bold;
+  font-size: 35px;
+}
+
