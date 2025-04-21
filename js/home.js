@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function addQuizToUi(quiz) {
   const quizCard = document.createElement("div");
   quizCard.innerHTML = `
-          <img class="quiz-image" src="${quiz.title}" alt="" />
+          <img class="quiz-image" src="${quiz.image}" alt="" />
           <h3 class="quiz-title">${quiz.title}</h3>
           <button class="start-btn">Start</button>     
         `;
