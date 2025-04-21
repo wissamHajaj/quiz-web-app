@@ -39,7 +39,6 @@
   font-size: 18px;
   font-weight: bold;
   font-family: "Times New Roman", Times, serif;
-  color: #333;
 }
 
 .nav-links li:hover {
@@ -108,7 +107,6 @@ button:hover {
 
 .quiz-card {
   width: 250px;
-  /* padding: 20px; */
   border-radius: 10px;
   text-align: center;
   margin: 10px;
