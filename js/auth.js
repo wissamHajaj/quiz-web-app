@@ -9,8 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     registerContainer.classList.toggle("hidden");
     loginContainer.classList.toggle("hidden");
-
-    // console.log("showlogin clicked");
   });
   showRegisterForm.addEventListener("click", (e) => {
     e.preventDefault();
@@ -25,15 +23,32 @@ registerBtn.addEventListener("click", (e) => {
   const registerName = document.querySelector(".register-name");
   const registerEmail = document.querySelector(".register-email");
   const registerPassword = document.querySelector(".register-password");
+  if (
+    !registerName.value.trim() ||
+    !registerEmail.value.trim() ||
+    !registerPassword.value.trim()
+  ) {
+    alert("Please fill in all the fields");
+    return;
+  }
+  if (!validateEmail(registerEmail.value.trim())) {
+    alert("This email is invalid");
+    return;
+  }
+
+  if (!validatePassword(registerPassword.value.trim())) {
+    alert("The password should at least 8 characters");
+    return;
+  }
 
   let users = JSON.parse(localStorage.getItem("users")) || [];
 
   const user = users.find(
-    (user) => user.email.toLowerCase() === registerEmail.value.toLowerCase()
+    (user) =>
+      user.email.toLowerCase() === registerEmail.value.trim().toLowerCase()
   );
 
   if (user) {
-    const registerEmail = document.querySelector(".register-email");
     const oldWarning = document.getElementById("email-warning");
     if (oldWarning) {
       oldWarning.remove();
