@@ -81,3 +81,9 @@ body {
 .submit-btn:hover {
   background-color: #318bc8;
 }
+
+@media (max-width: 520px) {
+  .question-container {
+    width: 80%;
+  }
+}
