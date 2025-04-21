@@ -1,8 +1,5 @@
-logoutBtn = document.querySelector(".logout-btn");
-logoutBtn.addEventListener("click", () => {
-  localStorage.removeItem("currentUser");
-  window.location.href = "index.html";
-});
+const logoutBtn = document.querySelector(".logout-btn");
+logoutBtn.addEventListener("click", () => logout());
 
 document.addEventListener("DOMContentLoaded", () => {
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
