@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.admin-header {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  background-color: rgb(161, 236, 255);
+  padding: 12px 5px;
+  color: rgb(60, 59, 59);
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.logout-btn {
+  margin: 0 10px;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 15px;
+  background-color: #439fdc;
+}
+
+.logout-btn:hover {
+  background-color: #1782c9;
+}
+
+.users-section {
+  margin: 70px 0;
+}
+
+.users-section h2 {
+  text-align: center;
+  background-color: aliceblue;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.users-grades-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.user-card {
+  border-radius: 10px;
+  padding: 20px;
+  background-color: rgb(222, 225, 225);
+}
+
+h3 {
+  margin-bottom: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+h3 span {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.grades-list li {
+  padding: 5px 0;
+}
+
+.grades-list {
+  list-style: none;
+}
