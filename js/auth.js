@@ -46,8 +46,6 @@ registerBtn.addEventListener("click", (e) => {
     registerEmail.parentNode.insertBefore(span, registerEmail.nextSibling);
     return;
   }
-
-  // console.log(registerName.value, registerEmail.value, registerPassword.value);
   const userId = Date.now().toString();
 
   const newUser = {
@@ -79,7 +77,7 @@ loginBtn.addEventListener("click", (e) => {
 
   if (user) {
     localStorage.setItem("currentUser", JSON.stringify(user));
-    if (user.email.toLowerCase() === "admin@gmail.com") {
+    if (user.email.toLowerCase() === "admin@quiz.com") {
       window.location.href = "dashboard.html";
     } else {
       window.location.href = "home.html";
