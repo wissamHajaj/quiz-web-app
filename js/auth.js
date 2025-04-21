@@ -1,20 +1,26 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const registerContainer = document.getElementById("register-container");
-  const loginContainer = document.getElementById("login-container");
+let currentUser = JSON.parse(localStorage.getItem("currentUser"));
+if (currentUser) {
+  if (currentUser.email === "admin@quiz.com") {
+    window.location.href = "dashboard.html";
+  } else {
+    window.location.href = "home.html";
+  }
+}
+const registerContainer = document.getElementById("register-container");
+const loginContainer = document.getElementById("login-container");
 
-  const showLoginForm = document.getElementById("show-login-form");
-  const showRegisterForm = document.getElementById("show-register-form");
+const showLoginForm = document.getElementById("show-login-form");
+const showRegisterForm = document.getElementById("show-register-form");
 
-  showLoginForm.addEventListener("click", (e) => {
-    e.preventDefault();
-    registerContainer.classList.toggle("hidden");
-    loginContainer.classList.toggle("hidden");
-  });
-  showRegisterForm.addEventListener("click", (e) => {
-    e.preventDefault();
-    loginContainer.classList.toggle("hidden");
-    registerContainer.classList.toggle("hidden");
-  });
+showLoginForm.addEventListener("click", (e) => {
+  e.preventDefault();
+  registerContainer.classList.toggle("hidden");
+  loginContainer.classList.toggle("hidden");
+});
+showRegisterForm.addEventListener("click", (e) => {
+  e.preventDefault();
+  loginContainer.classList.toggle("hidden");
+  registerContainer.classList.toggle("hidden");
 });
 
 const registerBtn = document.querySelector(".register-btn");
@@ -82,20 +88,29 @@ loginBtn.addEventListener("click", (e) => {
   e.preventDefault();
   const loginEmail = document.querySelector(".login-email");
   const loginPassword = document.querySelector(".login-password");
+  const email = loginEmail.value.trim().toLowerCase();
+  const password = loginPassword.value.trim();
+  if (!email || !password) {
+    alert("please fill in all the fields");
+    return;
+  }
 
   let users = JSON.parse(localStorage.getItem("users")) || [];
-  const user = users.find(
-    (user) =>
-      user.email.toLowerCase() === loginEmail.value.toLowerCase() &&
-      user.password === loginPassword.value
-  );
+  const user = users.find((user) => user.email.toLowerCase() === email);
+  if (!user) {
+    alert("This email is not found");
+    return;
+  }
 
-  if (user) {
-    localStorage.setItem("currentUser", JSON.stringify(user));
-    if (user.email.toLowerCase() === "admin@quiz.com") {
-      window.location.href = "dashboard.html";
-    } else {
-      window.location.href = "home.html";
-    }
+  if (user.password !== password) {
+    alert("Incorrect password");
+    return;
+  }
+
+  localStorage.setItem("currentUser", JSON.stringify(user));
+  if (user.email.toLowerCase() === "admin@quiz.com") {
+    window.location.href = "dashboard.html";
+  } else {
+    window.location.href = "home.html";
   }
 });
