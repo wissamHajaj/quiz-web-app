@@ -81,8 +81,6 @@ function saveGradeToLocalStorage(grade) {
   const user = JSON.parse(localStorage.getItem("currentUser"));
   const userId = user.id;
   const usersGrades = JSON.parse(localStorage.getItem("usersGrade")) || [];
-
-
   const userGrade = usersGrades.find((userGrade) => userGrade.id === userId);
   if (userGrade) {
     userGrade.grades.push({ quizId, grade });
@@ -90,4 +88,5 @@ function saveGradeToLocalStorage(grade) {
     usersGrades.push({ id: userId, grades: [{ quizId, grade }] });
   }
   localStorage.setItem("usersGrade", JSON.stringify(usersGrades));
+  window.location.href = "home.html";
 }
